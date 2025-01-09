@@ -3,9 +3,6 @@ using DevExpress.XtraEditors;
 using ConfigtEditor.ConfigEditor;
 using ConfigtEditor.CustomClass;
 using ConfigtEditor.Elements;
-#if SERVER_CONTROL
-using ConfigEditor.ServerControl;
-#endif
 
 namespace ConfigtEditor.Menus
 {
@@ -57,15 +54,6 @@ namespace ConfigtEditor.Menus
             menuSynapse.Visible = true;
             this._tabControl.TabPages.Add(new ECSMenuTabPage(menuSynapse));
 
-#if SERVER_CONTROL
-            var menuServer = new ECSMenuControl("Server");
-            var grpServer = menuServer.AddGroup(new ECSMenuGroup("Common"));
-
-            grpServer.AddItem<ServerControlLocal>();
-            grpServer.AddItem<ServerControlRemote>();
-            menuServer.Visible = false;//TODO
-            this._tabControl.TabPages.Add(new ECSMenuTabPage(menuServer));
-#endif
             //var menuExiled = new ECSMenuControl("Exiled");
             //menuExiled.Visible = true;
             //this._tabControl.TabPages.Add(new ECSMenuTabPage(menuExiled));
