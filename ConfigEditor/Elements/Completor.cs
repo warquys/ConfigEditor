@@ -1,5 +1,5 @@
-﻿using ConfigtEditor.Attributes;
-using ConfigtEditor.ConfigEditor;
+﻿using ConfigEditor.Attributes;
+using ConfigEditor.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     [Serializable]
     [XmlRoot("Completor")]
@@ -42,18 +42,18 @@ namespace ConfigtEditor.Elements
         #endregion
 
         #region Methods
-        public bool IsItemCompletor(SymlContentItem synapseItem)
+        public bool IsItemCompletor(SymlContentItem symlItem)
         {
             // Safe design
-            if (synapseItem == null || synapseItem.Value == null) return false;
+            if (symlItem == null || symlItem.Value == null) return false;
 
             if (CompletorType == CompletorType.ByValue)
             {
-                return ListValues.Any(p=> p.Value != null && p.Value == synapseItem.Value);
+                return ListValues.Any(p=> p.Value != null && p.Value == symlItem.Value);
             }
             else if (CompletorType == CompletorType.ByName)
             {
-                string info = $"{synapseItem.Name} {synapseItem.ParentListName} {synapseItem.ParentComment}";
+                string info = $"{symlItem.Name} {symlItem.ParentListName} {symlItem.ParentComment}";
                 return CheckContains(info);
             }
  
@@ -85,13 +85,13 @@ namespace ConfigtEditor.Elements
             int i = 0;
             while (result && i < allWord.Count())
             {
-                result = CeckSensitiveInsensitive(value, allWord[i]);
+                result = CheckSensitiveInsensitive(value, allWord[i]);
                 i++;
             }
             return result;
         }
 
-        private bool CeckSensitiveInsensitive(string value, string word)
+        private bool CheckSensitiveInsensitive(string value, string word)
         {
             return CaseSensitive ? value.Contains(word) : value.ToLower().Contains(word.ToLower());
         }

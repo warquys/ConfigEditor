@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraRichEdit;
-using ConfigtEditor.Commands;
+using ConfigEditor.Commands;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public class SaveConfigCommand : BaseCommand
     {

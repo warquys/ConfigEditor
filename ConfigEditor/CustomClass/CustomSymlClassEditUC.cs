@@ -8,24 +8,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using ConfigtEditor.Controls;
-using ConfigtEditor.Interfaces;
+using ConfigEditor.Controls;
+using ConfigEditor.Interfaces;
 
-namespace ConfigtEditor.CustomClass
+namespace ConfigEditor.CustomClass
 {
-    public partial class CustomSynapseClassEditUC : ECSEditUserControl
+    public partial class CustomSymlClassEditUC : ECSEditUserControl
     {
-        private CustomSynapseClassManager _manager;
-        public CustomSynapseClassEditUC() : base()
+        private CustomSymlClassManager _manager;
+        public CustomSymlClassEditUC() : base()
         {
             InitializeComponent();
         }
 
-        public CustomSynapseClassEditUC(IWriteManager manager) : base(manager)
+        public CustomSymlClassEditUC(IWriteManager manager) : base(manager)
         {
             InitializeComponent();
             BindingDataSource.DataSource = manager.CurrentObject;
-            _manager = manager as CustomSynapseClassManager;
+            _manager = manager as CustomSymlClassManager;
         }
 
         public override bool BeforeSave()

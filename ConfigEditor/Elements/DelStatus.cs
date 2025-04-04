@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     public class DelStatus : BaseUintElement
     {

@@ -1,4 +1,4 @@
-﻿namespace ConfigtEditor.Forms
+﻿namespace ConfigEditor.Forms
 {
     partial class ECSChildForm
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public class SYML
     {

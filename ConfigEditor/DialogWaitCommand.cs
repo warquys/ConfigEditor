@@ -1,7 +1,7 @@
 ﻿using System;
 using DevExpress.XtraSplashScreen;
 
-namespace ConfigtEditor
+namespace ConfigEditor
 {
     /// <summary>
     /// Command to execute the action passed into the constructor

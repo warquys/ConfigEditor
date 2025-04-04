@@ -3,13 +3,13 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.Tabbed;
-using ConfigtEditor.Controls;
-using ConfigtEditor.Factory;
-using ConfigtEditor.Forms;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Metadatas;
+using ConfigEditor.Controls;
+using ConfigEditor.Factory;
+using ConfigEditor.Forms;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Metadatas;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public static class ECSFormUtility
     {
@@ -109,7 +109,6 @@ namespace ConfigtEditor.Utils
 
         private static ECSChildForm CreateForm<T>(string title, Control control)
         {
-
             // Safe design
             if (control == null) { throw new ArgumentNullException(nameof(control)); }
 

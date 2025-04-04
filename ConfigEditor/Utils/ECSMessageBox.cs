@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public class ECSMessageBox
     {

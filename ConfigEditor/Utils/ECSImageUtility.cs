@@ -7,7 +7,7 @@ using System.Linq;
 using ConfigEditor.Properties;
 using DevExpress.Utils;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public static class ECSImageUtility
     {

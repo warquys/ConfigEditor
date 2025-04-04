@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace ConfigtEditor.Metadatas
+namespace ConfigEditor.Metadatas
 {
     public struct ECSMetadata
     {

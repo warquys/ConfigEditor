@@ -1,10 +1,10 @@
-﻿using ConfigtEditor.Attributes;
+﻿using ConfigEditor.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public static class ECSDisplayAnalyzer
     {

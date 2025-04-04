@@ -8,25 +8,25 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace ConfigtEditor.CustomClass
+namespace ConfigEditor.CustomClass
 {
     [Serializable]
     [XmlRoot("SynapseCustomClass")]
-    public class CustomSynapseListClass
+    public class CustomSymlListClass
     {
 
         #region Attributes & Properties
 
         [XmlArray("List")]
         [XmlArrayItem("CustomClass")]
-        public List<CustomSynapseClass> Elements { get; set; }
+        public List<CustomSymlClass> Elements { get; set; }
         #endregion
 
         #region Constructors & Destructor
         #endregion
 
         #region Methods
-        public static CustomSynapseListClass FromXml(string xml)
+        public static CustomSymlListClass FromXml(string xml)
         {
             // Safe design
             //if (xml == null) { throw new ArgumentNullException(nameof(xml)); }
@@ -34,14 +34,14 @@ namespace ConfigtEditor.CustomClass
             if (!String.IsNullOrWhiteSpace(toParse))
             {
                 var xDoc = XDocument.Parse(toParse);
-                var xmlSerializer = new XmlSerializer(typeof(CustomSynapseListClass));
+                var xmlSerializer = new XmlSerializer(typeof(CustomSymlListClass));
 
-                var mdlInfo = (CustomSynapseListClass)xmlSerializer.Deserialize(xDoc.CreateReader());
+                var mdlInfo = (CustomSymlListClass)xmlSerializer.Deserialize(xDoc.CreateReader());
                 return mdlInfo;
             }
             else
             {
-                return new CustomSynapseListClass();
+                return new CustomSymlListClass();
             }
         }
 
@@ -57,7 +57,7 @@ namespace ConfigtEditor.CustomClass
             settings.OmitXmlDeclaration = true;
             var xmlWriter = XmlWriter.Create(stringwriter, settings);
 
-            var xmlSerializer = new XmlSerializer(typeof(CustomSynapseListClass));
+            var xmlSerializer = new XmlSerializer(typeof(CustomSymlListClass));
             xmlSerializer.Serialize(xmlWriter, this, nameSpace);
 
             return stringwriter.ToString();

@@ -1,8 +1,8 @@
-﻿using ConfigtEditor.Interfaces;
+﻿using ConfigEditor.Interfaces;
 using System;
 using System.ComponentModel;
 
-namespace ConfigtEditor.Commands
+namespace ConfigEditor.Commands
 {
     public abstract class BaseCommand<T, U> : BaseCommand<T>
     {

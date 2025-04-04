@@ -1,4 +1,4 @@
-﻿using ConfigtEditor.Managers;
+﻿using ConfigEditor.Managers;
 using DevExpress.Office.Utils;
 using DevExpress.XtraRichEdit.UI;
 using System;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static DevExpress.XtraEditors.Mask.Design.MaskSettingsForm.DesignInfo.MaskManagerInfo;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public class SymlDetailManager : FixedListManager<SymlContentItem>
     {

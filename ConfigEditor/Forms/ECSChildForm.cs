@@ -4,11 +4,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraLayout;
 using DevExpress.XtraSplashScreen;
-using ConfigtEditor.Controls;
-using ConfigtEditor.Utils;
+using ConfigEditor.Controls;
+using ConfigEditor.Utils;
 using ConfigEditor.Interfaces;
 
-namespace ConfigtEditor.Forms
+namespace ConfigEditor.Forms
 {
     public partial class ECSChildForm : DevExpress.XtraEditors.XtraForm, ISavable
     {

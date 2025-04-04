@@ -1,10 +1,10 @@
-﻿using ConfigtEditor.ConfigEditor;
-using ConfigtEditor.CustomClass;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Editor;
+using ConfigEditor.CustomClass;
+using ConfigEditor.Elements;
+using ConfigEditor.Utils;
 using System;
 
-namespace ConfigtEditor.Metadatas
+namespace ConfigEditor.Metadatas
 {
     public sealed class ECSMetadataFactorySingleton
     {
@@ -72,7 +72,7 @@ namespace ConfigtEditor.Metadatas
 
             Register<T>(() => new ECSMetadata(typeof(T), text, iconName, addControlText));
         }
-        #endregion
+#endregion
 
 
         #region Methods
@@ -87,12 +87,12 @@ namespace ConfigtEditor.Metadatas
 
         private void RegisterAll()
         {
-            Register<CustomSynapseClass>("Custom class", String.Empty); //For an next time 
-            Register<SynapseConfigEditor>("Config Editor", "ICN_PRODUCT_HIERARCHY");
-            Register<Config>("Config Editor Parameter", "ICN_CUSTOM_CLASS");
-            Register<SynapsePermissionEditor>("Permission Editor", "ICN_ACTION_ELEMENT_DROIT");
+            Register<CustomSymlClass>("Custom class", String.Empty); //For an next time 
+            Register<SymlConfigEditor>("Config Editor", "ICN_PRODUCT_HIERARCHY");
+            Register<SymlEditorConfig>("Config Editor Parameter", "ICN_CUSTOM_CLASS");
+            Extension.ExtensionHandler.CallEcsMetaRegisterHook(this);
         }
 
-#endregion
+        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ConfigtEditor
+﻿namespace ConfigEditor
 {
     partial class MasterForm
     {
@@ -38,7 +38,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this._tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this._sidePanel = new DevExpress.XtraEditors.SidePanel();
-            this.masterMenuControl1 = new ConfigtEditor.Menus.MasterMenuControl();
+            this.masterMenuControl1 = new ConfigEditor.Menus.MasterMenuControl();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._tabbedView)).BeginInit();
@@ -99,9 +99,12 @@
             // 
             // _sidePanel
             // 
+            this._sidePanel.AutoScroll = true;
+            this._sidePanel.AutoScrollMinSize = new System.Drawing.Size(20, 0);
             this._sidePanel.Controls.Add(this.masterMenuControl1);
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
+            this._sidePanel.MinimumSize = new System.Drawing.Size(20, 0);
             this._sidePanel.Name = "_sidePanel";
             this._sidePanel.Size = new System.Drawing.Size(243, 568);
             this._sidePanel.TabIndex = 1;
@@ -143,11 +146,11 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView _tabbedView;
         private DevExpress.XtraEditors.SidePanel _sidePanel;
         public DevExpress.XtraBars.Docking2010.DocumentManager DocumentManager;
-        private Menus.MasterMenuControl masterMenuControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarManager _barManager;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private Menus.MasterMenuControl masterMenuControl1;
     }
 }

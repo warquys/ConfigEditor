@@ -4,7 +4,7 @@ using DevExpress.XtraGrid.Registrator;
 using DevExpress.XtraGrid.Views.Base;
 
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public class ECSGridControl : GridControl
     {

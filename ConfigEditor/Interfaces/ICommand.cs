@@ -1,7 +1,7 @@
 ﻿using System;
 using IWinCommand = System.Windows.Input.ICommand;
 
-namespace ConfigtEditor.Interfaces
+namespace ConfigEditor.Interfaces
 {
     public interface ICommand<T> : ICommand
     {

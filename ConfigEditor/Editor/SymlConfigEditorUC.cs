@@ -1,81 +1,21 @@
-﻿using ConfigEditor.Interfaces;
-using ConfigtEditor.Commands;
-using ConfigtEditor.Controls;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPrinting.Native;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using ConfigEditor.Commands;
+using ConfigEditor.Controls;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
-    public partial class SynapseConfigEditorUC : ECSBarUserControl, IMultipleDisplay, ISavable
+    public partial class SymlConfigEditorUC : ECSBarUserControl, IMultipleDisplay, ISavable
     {
-        #region Nested
-        private class DelSectionCommand : BaseCommand<SymlSection>
-        {
-            #region Attributes & Properties
-            protected override bool CanExecuteValue => Parameter != null && Parameter.Name != "Server";
-            private SymlSectionManager _manager;
-
-
-            #endregion
-
-            #region Constructors & Destructor
-            public DelSectionCommand(SymlSectionManager manager)
-            {
-                _manager = manager;
-            }
-
-            #endregion
-
-            #region Methods
-            protected override void ExecuteCommand()
-            {
-                _manager.Delete(Parameter);
-            }
-            #endregion
-
-        }
-        private class AddSectionCommand : BaseCommand
-        {
-            #region Attributes & Properties
-            protected override bool CanExecuteValue => _manager.ElementList.Any();
-            private SymlSectionManager _manager;
-
-
-            #endregion
-
-            #region Constructors & Destructor
-            public AddSectionCommand(SymlSectionManager manager)
-            {
-                _manager = manager;
-            }
-
-            #endregion
-
-            #region Methods
-            protected override void ExecuteCommand()
-            {
-                string name = XtraInputBox.Show("Group name", "Section Name", "NewGroup");
-
-                if (name == String.Empty)
-                    return;
-
-                _manager.CreateConfigSection(name);
-            }
-            #endregion
-
-        }
-        #endregion
-
         private const string closeMessage = "you didn't save your changes! Do you want save it?";
         private static int NextHash = 0;
         private int hash = -1;
@@ -90,42 +30,33 @@ namespace ConfigtEditor.ConfigEditor
             return hash;
         }
 
-        private AddSectionCommand addSectionCommand;
-        private DelSectionCommand delSectionCommand;
-        private LoadConfigCommand loadCommand;
-        private SaveConfigCommand saveCommand;
-        private AddListItemCommand addItemCommand;
-        private DeleteListItemCommand deleteItemCommand;
-        private SymlSectionManager _managerSection = new SymlSectionManager();
-        private SymlDetailManager _managerDetail = new SymlDetailManager();
-        private ListControl<SymlSection> _listSection;
-        private ListControl<SymlContentItem> _listDetail;
+        protected LoadConfigCommand loadCommand;
+        protected SaveConfigCommand saveCommand;
+        protected AddListItemCommand addItemCommand;
+        protected DeleteListItemCommand deleteItemCommand;
+        protected SymlSectionManager _managerSection = new SymlSectionManager();
+        protected SymlDetailManager _managerDetail = new SymlDetailManager();
+        protected ListControl<SymlSection> _listSection;
+        protected ListControl<SymlContentItem> _listDetail;
         private bool _changed = false;
         public bool CancelClose { get; private set; }
         public bool NeedToSave => _changed;
 
-        public SynapseConfigEditorUC(bool permission = false)
+        public SymlConfigEditorUC()
         {
             InitializeComponent();
             InitListControl();
             InitCommands();
-            if (permission)
-            {
-                AddPermissionCommand();
-            }
-            InitWarning(permission);
+            InitWarning();
         }
 
 
-        private void InitWarning(bool permission)
+        protected void Changed() => _changed = true;
+
+        private void InitWarning()
         {
             _listDetail.GridView.ValidateRow += (s, e) => _changed = true;
             addItemCommand.AfterExecute += (s, e) => _changed = true;
-            if (permission)
-            {
-                addSectionCommand.AfterExecute += (s, e) => _changed = true;
-                delSectionCommand.AfterExecute += (s, e) => _changed = true;
-            }
             saveCommand.AfterExecute += (s, e) => _changed = false;
             loadCommand.AfterExecute += (s, e) => _changed = false;
             loadCommand.BeforeExecute += (s, e) => AskUserSave(e);
@@ -154,14 +85,6 @@ namespace ConfigtEditor.ConfigEditor
                 }
             }
             
-        }
-
-        private void AddPermissionCommand()
-        {
-            addSectionCommand = new AddSectionCommand(_managerSection);
-            delSectionCommand = new DelSectionCommand(_managerSection);
-            _listSection.Register("Add", addSectionCommand, "Add Section", true, true, shortcut: new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            _listSection.Register("Del", delSectionCommand, "Del Section", true, true, shortcut: new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
         }
 
         private void InitListControl()
@@ -210,7 +133,6 @@ namespace ConfigtEditor.ConfigEditor
             loadCommand.AfterExecute += (s, e) =>
             {
                 saveCommand.OnCanExecuteChanged();
-                addSectionCommand?.OnCanExecuteChanged();
             };
             saveCommand = new SaveConfigCommand(_managerSection);
             saveCommand.AfterExecute += (s, e) => MessageBox.Show("Config was saved");

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     public abstract class BaseStringElement : BaseElement, IEquatable<BaseStringElement>, IComparable<BaseStringElement>
     {

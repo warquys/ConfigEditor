@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Interfaces
+namespace ConfigEditor.Interfaces
 {
     public interface IMultipleDisplay
     {

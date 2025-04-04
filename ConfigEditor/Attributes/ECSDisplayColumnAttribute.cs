@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ConfigtEditor.Attributes
+namespace ConfigEditor.Attributes
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     public class ECSDisplayColumnAttribute : ECSDisplayAttribute

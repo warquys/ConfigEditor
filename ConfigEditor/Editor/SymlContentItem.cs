@@ -1,5 +1,5 @@
-﻿using ConfigtEditor.Attributes;
-using ConfigtEditor.Elements;
+﻿using ConfigEditor.Attributes;
+using ConfigEditor.Elements;
 using DevExpress.Utils.Serializing.Helpers;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public class SymlContentItem : BaseUintElement
     {
@@ -107,7 +107,7 @@ namespace ConfigtEditor.ConfigEditor
         {
             get
             {
-                return Config.Singleton.GetCompletor(this);
+                return SymlEditorConfig.Singleton.GetCompletor(this);
             }
         }
 

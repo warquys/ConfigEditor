@@ -2,7 +2,7 @@
 using System;
 
 
-namespace ConfigtEditor.Interfaces
+namespace ConfigEditor.Interfaces
 {
     public interface ISelectableControl : IDisposable
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public abstract class BaseFactory<T>
     {
@@ -48,7 +48,6 @@ namespace ConfigtEditor.Utils
         {
             return Create(typeof(TKey));
         }
-
 
         protected void Register<TKey>(Func<T> func)
         {

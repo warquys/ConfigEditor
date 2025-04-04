@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConfigtEditor.Attributes
+namespace ConfigEditor.Attributes
 {
     public enum ECSMaskType
     {

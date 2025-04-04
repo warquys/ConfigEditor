@@ -12,10 +12,10 @@ using DevExpress.Utils.Menu;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Container;
 using DevExpress.XtraLayout;
-using ConfigtEditor.Forms;
-using ConfigtEditor.Utils;
+using ConfigEditor.Forms;
+using ConfigEditor.Utils;
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public class ECSUserControl : XtraUserControl
     {

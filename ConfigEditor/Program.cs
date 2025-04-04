@@ -1,7 +1,6 @@
 ﻿using ConfigEditor.Utils;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Managers;
-using ConfigtEditor.Utils;
+using ConfigEditor.Elements;
+using ConfigEditor.Managers;
 using DevExpress.Office.Crypto;
 using DevExpress.Skins;
 using System;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ConfigtEditor
+namespace ConfigEditor
 {
     static class Program
     {
@@ -23,7 +22,9 @@ namespace ConfigtEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Config.Load();
+            SymlEditorConfig.Load();
+            Extension.ExtensionHandler.LoadDependencies();
+            Extension.ExtensionHandler.LoadExtensions();
             SetTheme();
             ECSFormUtility.MainMdiParent = new MasterForm();
             Application.Run(ECSFormUtility.MainMdiParent);

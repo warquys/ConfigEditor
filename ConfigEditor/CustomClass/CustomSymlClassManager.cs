@@ -1,27 +1,27 @@
-﻿using ConfigtEditor.Elements;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Managers;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Elements;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Managers;
+using ConfigEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.CustomClass
+namespace ConfigEditor.CustomClass
 {
-    public class CustomSynapseClassManager : FixedListManager<CustomSynapseClass>, IWriteManager
+    public class CustomSymlClassManager : FixedListManager<CustomSymlClass>, IWriteManager
     {
 
         #region Attributes & Properties
         public object CurrentObject { get; set; }
-        public CustomSynapseClass Current => CurrentObject as CustomSynapseClass;
+        public CustomSymlClass Current => CurrentObject as CustomSymlClass;
 
-        private CustomSynapseListClass liste;
+        private CustomSymlListClass liste;
         #endregion
 
         #region Constructors & Destructor
-        public CustomSynapseClassManager() : base()
+        public CustomSymlClassManager() : base()
         {
             // lire du fichier Xml
             LoadXmlFile();
@@ -31,7 +31,7 @@ namespace ConfigtEditor.CustomClass
         #region Methods
         public void LoadXmlFile()
         {
-            liste = new CustomSynapseListClass();
+            liste = new CustomSymlListClass();
             _results = liste.Elements;
             this.LoadList();
 
@@ -44,7 +44,7 @@ namespace ConfigtEditor.CustomClass
 
         public void PrepareNew()
         {
-            CurrentObject = new CustomSynapseClass()
+            CurrentObject = new CustomSymlClass()
             {
                 IdClass = 33
             };

@@ -1,14 +1,14 @@
-﻿using ConfigtEditor.Controls;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Factory;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Controls;
+using ConfigEditor.Elements;
+using ConfigEditor.Factory;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ConfigtEditor.Commands
+namespace ConfigEditor.Commands
 {
     public class ElementEditCommand<T> : BaseCommand<T>
     {

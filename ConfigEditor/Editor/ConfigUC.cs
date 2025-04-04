@@ -8,17 +8,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using ConfigtEditor.Controls;
-using ConfigtEditor.Utils;
-using ConfigtEditor.Managers;
+using ConfigEditor.Controls;
+using ConfigEditor.Utils;
+using ConfigEditor.Managers;
 using DevExpress.XtraGrid.Columns;
-using ConfigtEditor.Commands;
-using ConfigtEditor.ConfigEditor;
-using ConfigtEditor.Elements;
+using ConfigEditor.Commands;
+using ConfigEditor.Editor;
+using ConfigEditor.Elements;
 using ConfigEditor.Interfaces;
 using DevExpress.XtraGrid.Views.Base;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public partial class ConfigUC : ECSUserControl
     {

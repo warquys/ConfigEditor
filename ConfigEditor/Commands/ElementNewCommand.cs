@@ -1,11 +1,11 @@
-﻿using ConfigtEditor.Controls;
-using ConfigtEditor.Factory;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Controls;
+using ConfigEditor.Factory;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 using System;
 using System.Windows.Forms;
 
-namespace ConfigtEditor.Commands
+namespace ConfigEditor.Commands
 {
     public class ElementNewCommand<T> : BaseCommand
         where T : new()

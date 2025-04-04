@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -151,24 +166,24 @@
     <Compile Include="Commands\ElementNewCommand.cs" />
     <Compile Include="Commands\ElementResetCommand.cs" />
     <Compile Include="Commands\ElementSaveCommand.cs" />
-    <Compile Include="ConfigEditor\AddListItemCommand.cs" />
-    <Compile Include="ConfigEditor\ConfigSection.cs" />
-    <Compile Include="ConfigEditor\DeleteListItemCommand.cs" />
-    <Compile Include="ConfigEditor\LoadConfigCommand.cs" />
-    <Compile Include="ConfigEditor\SaveConfigCommand.cs" />
-    <Compile Include="ConfigEditor\SYML.cs" />
-    <Compile Include="ConfigEditor\SymlContentItem.cs" />
-    <Compile Include="ConfigEditor\SymlDetailManager.cs" />
-    <Compile Include="ConfigEditor\SymlSection.cs" />
-    <Compile Include="ConfigEditor\SymlSectionManager.cs" />
-    <Compile Include="ConfigEditor\SynapseConfigEditor.cs" />
-    <Compile Include="ConfigEditor\SynapseConfigEditorUC.cs">
+    <Compile Include="Editor\AddListItemCommand.cs" />
+    <Compile Include="Editor\ConfigSection.cs" />
+    <Compile Include="Editor\DeleteListItemCommand.cs" />
+    <Compile Include="Editor\LoadConfigCommand.cs" />
+    <Compile Include="Editor\SaveConfigCommand.cs" />
+    <Compile Include="Editor\SYML.cs" />
+    <Compile Include="Editor\SymlContentItem.cs" />
+    <Compile Include="Editor\SymlDetailManager.cs" />
+    <Compile Include="Editor\SymlSection.cs" />
+    <Compile Include="Editor\SymlSectionManager.cs" />
+    <Compile Include="Editor\SymlConfigEditor.cs" />
+    <Compile Include="Editor\SymlConfigEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ConfigEditor\SynapseConfigEditorUC.Designer.cs">
-      <DependentUpon>SynapseConfigEditorUC.cs</DependentUpon>
+    <Compile Include="Editor\SymlConfigEditorUC.Designer.cs">
+      <DependentUpon>SymlConfigEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Config.cs" />
+    <Compile Include="Controls\SymlEditorConfig.cs" />
     <Compile Include="Controls\ECSBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,21 +231,21 @@
     <Compile Include="CustomClass\CompletorValueEditUC.Designer.cs">
       <DependentUpon>CompletorValueEditUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigEditor\ConfigUC.cs">
+    <Compile Include="Editor\ConfigUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ConfigEditor\ConfigUC.Designer.cs">
+    <Compile Include="Editor\ConfigUC.Designer.cs">
       <DependentUpon>ConfigUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomClass\CustomSynapseClass.cs" />
-    <Compile Include="CustomClass\CustomSynapseClassEditUC.cs">
+    <Compile Include="CustomClass\CustomSymlClass.cs" />
+    <Compile Include="CustomClass\CustomSymlClassEditUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomClass\CustomSynapseClassEditUC.Designer.cs">
-      <DependentUpon>CustomSynapseClassEditUC.cs</DependentUpon>
+    <Compile Include="CustomClass\CustomSymlClassEditUC.Designer.cs">
+      <DependentUpon>CustomSymlClassEditUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomClass\CustomSynapseClassManager.cs" />
-    <Compile Include="CustomClass\CustomSynapseListClass.cs" />
+    <Compile Include="CustomClass\CustomSymlClassManager.cs" />
+    <Compile Include="CustomClass\CustomSymlListClass.cs" />
     <Compile Include="DialogWaitCommand.cs" />
     <Compile Include="Elements\BaseElement.cs" />
     <Compile Include="Elements\BaseStringElement.cs" />
@@ -239,8 +254,10 @@
     <Compile Include="Elements\CompletorType.cs" />
     <Compile Include="Elements\CompletorValue.cs" />
     <Compile Include="Elements\DelStatus.cs" />
-    <Compile Include="Elements\ServerConfig.cs" />
     <Compile Include="Elements\ServerValue.cs" />
+    <Compile Include="Extension\ExtensionAttribute.cs" />
+    <Compile Include="Extension\ExtensionHandler.cs" />
+    <Compile Include="Extension\IExtension.cs" />
     <Compile Include="Factory\ECSDetailFactory.cs" />
     <Compile Include="Factory\ECSListFactory.cs" />
     <Compile Include="Forms\ECSChildForm.cs">
@@ -251,6 +268,12 @@
     </Compile>
     <Compile Include="Controls\ECSUserControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ICommandRegistrator.cs" />
@@ -263,6 +286,12 @@
     <Compile Include="Managers\CompletorManager.cs" />
     <Compile Include="Managers\CompletorValueManager.cs" />
     <Compile Include="Managers\FixedListManager.cs" />
+    <Compile Include="Menus\MasterMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menus\MasterMenuControl.Designer.cs">
+      <DependentUpon>MasterMenuControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\BindingSourceExtensions.cs" />
     <Compile Include="Utils\ControlExtention.cs" />
     <Compile Include="Utils\ECSDisplayAnalyzer.cs" />
@@ -288,10 +317,6 @@
     <Compile Include="MasterForm.Designer.cs">
       <DependentUpon>MasterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\MasterMenuControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Menus\MasterMenuControl.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\BaseFactory.cs" />
@@ -301,8 +326,8 @@
     <Compile Include="Utils\Memento.cs" />
     <Compile Include="Utils\Singleton.cs" />
     <Compile Include="Utils\Theme.cs" />
-    <EmbeddedResource Include="ConfigEditor\SynapseConfigEditorUC.resx">
-      <DependentUpon>SynapseConfigEditorUC.cs</DependentUpon>
+    <EmbeddedResource Include="Editor\SymlConfigEditorUC.resx">
+      <DependentUpon>SymlConfigEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ECSBarUserControl.resx">
       <DependentUpon>ECSBarUserControl.cs</DependentUpon>
@@ -319,11 +344,11 @@
     <EmbeddedResource Include="CustomClass\CompletorValueEditUC.resx">
       <DependentUpon>CompletorValueEditUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigEditor\ConfigUC.resx">
+    <EmbeddedResource Include="Editor\ConfigUC.resx">
       <DependentUpon>ConfigUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomClass\CustomSynapseClassEditUC.resx">
-      <DependentUpon>CustomSynapseClassEditUC.cs</DependentUpon>
+    <EmbeddedResource Include="CustomClass\CustomSymlClassEditUC.resx">
+      <DependentUpon>CustomSymlClassEditUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ECSChildForm.resx">
       <DependentUpon>ECSChildForm.cs</DependentUpon>
@@ -331,11 +356,16 @@
     <EmbeddedResource Include="Controls\ECSUserControl.resx">
       <DependentUpon>ECSUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus\ECSMenuControl.resx" />
     <EmbeddedResource Include="MasterForm.resx">
       <DependentUpon>MasterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\MasterMenuControl.resx" />
+    <EmbeddedResource Include="Menus\MasterMenuControl.resx">
+      <DependentUpon>MasterMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -349,7 +379,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ScriptEditor.ConfigEditor.Room.datasource" />
-    <None Include="Properties\DataSources\ScriptEditor.CustomClass.CustomSynapseClass.datasource" />
+    <None Include="Properties\DataSources\ScriptEditor.CustomClass.CustomSymlClass.datasource" />
     <None Include="Properties\DataSources\ScriptEditor.Elements.Completor.datasource" />
     <None Include="Properties\DataSources\ScriptEditor.Elements.CompletorValue.datasource" />
     <None Include="Properties\Settings.settings">
@@ -373,6 +403,18 @@
     <Content Include="ICN_PRODUCT_HIERARCHY.ico" />
     <None Include="Resources\ICN_PRODUCT_HIERARCHY.ico" />
     <None Include="Resources\ICN_ACTION_ELEMENT_DROIT.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

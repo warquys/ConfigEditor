@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     /// <summary>
     /// Class that keeps track of the changes happening to data bindings

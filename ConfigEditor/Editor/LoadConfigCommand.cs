@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraRichEdit;
-using ConfigtEditor.Commands;
+using ConfigEditor.Commands;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
-    class LoadConfigCommand : BaseCommand
+    public class LoadConfigCommand : BaseCommand
     {
         private SymlSectionManager _managerSection;
 
@@ -26,7 +26,7 @@ namespace ConfigtEditor.ConfigEditor
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 //openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Config Synapse (*.syml)|*.syml";
+                openFileDialog.Filter = "Syml Config (*.syml)|*.syml";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 

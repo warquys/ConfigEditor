@@ -1,23 +1,23 @@
-﻿using ConfigtEditor.Commands;
+﻿using ConfigEditor.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
-    public class DeleteListItemCommand : BaseCommand<SymlContentItem>
+    public class AddListItemCommand : BaseCommand<SymlContentItem>
     {
         #region Attributes & Properties
-        protected override bool CanExecuteValue => base.CanExecuteValue && Parameter.IsListItem;
+        protected override bool CanExecuteValue => base.CanExecuteValue && (Parameter.IsList || Parameter.IsListItem);
         private SymlDetailManager _managerDetail;
 
 
         #endregion
 
         #region Constructors & Destructor
-        public DeleteListItemCommand(SymlDetailManager managerDetail)
+        public AddListItemCommand(SymlDetailManager managerDetail)
         {
             _managerDetail = managerDetail;
         }
@@ -27,8 +27,9 @@ namespace ConfigtEditor.ConfigEditor
         #region Methods
         protected override void ExecuteCommand()
         {
-            _managerDetail.DeleteListEntry(Parameter);
+            _managerDetail.CreateListEntry(Parameter);
         }
         #endregion
+
     }
 }

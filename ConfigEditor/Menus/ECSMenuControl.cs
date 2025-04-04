@@ -1,13 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Metadatas;
-using ConfigtEditor.Utils;
+using ConfigEditor.Elements;
+using ConfigEditor.Metadatas;
+using ConfigEditor.Utils;
 using DevExpress.XtraNavBar;
 
 
-namespace ConfigtEditor.Menus
+namespace ConfigEditor.Menus
 {
     /// <summary>
     /// Control to manage the menu that appears on the left side of the application

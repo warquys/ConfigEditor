@@ -1,25 +1,27 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ConfigEditor.Editor;
+using ConfigEditor.Elements;
+using ConfigEditor.Extension;
 using DevExpress.XtraEditors;
-using ConfigtEditor.ConfigEditor;
-using ConfigtEditor.CustomClass;
-using ConfigtEditor.Elements;
 
-namespace ConfigtEditor.Menus
+namespace ConfigEditor.Menus
 {
     public partial class MasterMenuControl : XtraUserControl
     {
-        #region Attributes & Properties
-        #endregion
-
-
         #region Constructors & Destructor
         public MasterMenuControl()
         {
             InitializeComponent();
 
-            _logoLayout.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-
-/*
+            /*
             string dir = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
             if (System.IO.File.Exists($"{dir}\\Logo.png"))
@@ -43,21 +45,14 @@ namespace ConfigtEditor.Menus
         #region Methods
         private void CreateMenuTabs()
         {
+            var ConfigSmyl = new ECSMenuControl("Syml");
+            var grpConfig = ConfigSmyl.AddGroup(new ECSMenuGroup("Common"));
+            grpConfig.AddItem<SymlConfigEditor>();
+            grpConfig.AddItem<SymlEditorConfig>();
 
-            var menuSynapse = new ECSMenuControl("Synapse");
-            var grpConfig = menuSynapse.AddGroup(new ECSMenuGroup("Common"));
-            grpConfig.AddItem<SynapseConfigEditor>();
-            grpConfig.AddItem<Config>();
-            grpConfig.AddItem<SynapsePermissionEditor>(); 
-            //grpClass.AddItem<CustomSynapseClass>();
-
-            menuSynapse.Visible = true;
-            this._tabControl.TabPages.Add(new ECSMenuTabPage(menuSynapse));
-
-            //var menuExiled = new ECSMenuControl("Exiled");
-            //menuExiled.Visible = true;
-            //this._tabControl.TabPages.Add(new ECSMenuTabPage(menuExiled));
-
+            ConfigSmyl.Visible = true;
+            this._tabControl.TabPages.Add(new ECSMenuTabPage(ConfigSmyl));
+            ExtensionHandler.CallMasterMenuHook(this, this._tabControl.TabPages);
         }
         #endregion
     }

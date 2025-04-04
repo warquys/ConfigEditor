@@ -1,9 +1,9 @@
-﻿using ConfigtEditor.Controls;
-using ConfigtEditor.Interfaces;
+﻿using ConfigEditor.Controls;
+using ConfigEditor.Interfaces;
 using System;
 
 
-namespace ConfigtEditor.Commands
+namespace ConfigEditor.Commands
 {
     public class ElementSaveCommand : BaseCommand
     {

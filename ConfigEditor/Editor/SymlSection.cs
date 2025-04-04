@@ -1,4 +1,4 @@
-﻿using ConfigtEditor.Attributes;
+﻿using ConfigEditor.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.ConfigEditor
+namespace ConfigEditor.Editor
 {
     public class SymlSection
     {

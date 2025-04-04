@@ -1,11 +1,11 @@
-﻿using ConfigtEditor.Elements;
+﻿using ConfigEditor.Elements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Interfaces
+namespace ConfigEditor.Interfaces
 {
     public interface IListManager<T> : IListManager
     {

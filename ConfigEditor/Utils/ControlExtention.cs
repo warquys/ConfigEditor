@@ -2,11 +2,11 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using ConfigtEditor.Interfaces;
+using ConfigEditor.Interfaces;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public static class ControlExtention
     {

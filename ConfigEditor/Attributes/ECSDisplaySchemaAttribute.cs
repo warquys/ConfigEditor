@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ConfigtEditor.Attributes
+namespace ConfigEditor.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class ECSDisplaySchemaAttribute : Attribute

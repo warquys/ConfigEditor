@@ -1,4 +1,4 @@
-﻿using ConfigtEditor.Attributes;
+﻿using ConfigEditor.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     public class CompletorValue : BaseUintElement, IConvertible
     {
@@ -24,13 +24,13 @@ namespace ConfigtEditor.Elements
 
         public CompletorValue(string value)
         {
-            Id = Config.Singleton.GetCompletorValueId();
+            Id = SymlEditorConfig.Singleton.GetCompletorValueId();
             Value = value;
         }
 
         public CompletorValue(string value, string help)
         {
-            Id = Config.Singleton.GetCompletorValueId();
+            Id = SymlEditorConfig.Singleton.GetCompletorValueId();
             Value = value;
             Help = help;    
         }

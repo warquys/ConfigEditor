@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     [Serializable]
     public abstract class BaseUintElement : BaseElement//, IEquatable<BaseUintElement>, IComparable<BaseUintElement>, IComparable

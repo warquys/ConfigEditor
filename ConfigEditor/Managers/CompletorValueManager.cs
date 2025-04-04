@@ -1,13 +1,13 @@
-﻿using ConfigtEditor.Elements;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Elements;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Managers
+namespace ConfigEditor.Managers
 {
     internal class CompletorValueManager : FixedListManager<CompletorValue>, IWriteManager
     {
@@ -26,7 +26,7 @@ namespace ConfigtEditor.Managers
         public override DelStatus Delete(CompletorValue element)
         {
             var result = base.Delete(element);
-            Config.Singleton.Save();
+            SymlEditorConfig.Singleton.Save();
             return result;
         }
         public void LoadList(Completor completor)
@@ -42,11 +42,11 @@ namespace ConfigtEditor.Managers
             {
                 if (Current.IsNew())
                 {
-                    Current.Id = Config.Singleton.GetCompletorValueId();
+                    Current.Id = SymlEditorConfig.Singleton.GetCompletorValueId();
                     _completor.ListValues.Add(Current);
                     LoadList();
                 }
-                Config.Singleton.Save();
+                SymlEditorConfig.Singleton.Save();
                 OnElementListUpdated();
             }
             return (_completor != null);

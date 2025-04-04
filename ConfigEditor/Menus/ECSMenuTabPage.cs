@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using DevExpress.XtraTab;
 
 
-namespace ConfigtEditor.Menus
+namespace ConfigEditor.Menus
 {
     public class ECSMenuTabPage : XtraTabPage
     {

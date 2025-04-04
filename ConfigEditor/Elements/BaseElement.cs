@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
 	public abstract class BaseElement : IEquatable<BaseElement>, IComparable<BaseElement>, IComparable
 	{

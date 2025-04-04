@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraBars;
 
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public class ECSBar : Bar
     {

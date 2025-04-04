@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using DevExpress.XtraBars;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public class ECSCommandBar : ECSBar, ICommandRegistrator
     {

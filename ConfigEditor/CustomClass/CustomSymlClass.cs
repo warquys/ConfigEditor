@@ -1,5 +1,5 @@
-﻿using ConfigtEditor.Attributes;
-using ConfigtEditor.Elements;
+﻿using ConfigEditor.Attributes;
+using ConfigEditor.Elements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +9,11 @@ using System.Xml.Serialization;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ConfigtEditor.CustomClass
+namespace ConfigEditor.CustomClass
 {
     [Serializable]
     [XmlRoot("CustomClass")]
-    public class CustomSynapseClass : BaseUintElement, INotifyPropertyChanged
+    public class CustomSymlClass : BaseUintElement, INotifyPropertyChanged
     {
 
         #region Attributes & Properties

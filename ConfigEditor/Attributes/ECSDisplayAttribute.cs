@@ -2,7 +2,7 @@
 using System.ComponentModel;
 
 
-namespace ConfigtEditor.Attributes
+namespace ConfigEditor.Attributes
 {
     [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class ECSDisplayAttribute : DisplayNameAttribute

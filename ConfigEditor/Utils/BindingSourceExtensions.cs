@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     internal static class BindingSourceExtensions
     {

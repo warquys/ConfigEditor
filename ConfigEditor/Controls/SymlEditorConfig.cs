@@ -1,5 +1,5 @@
 ﻿using ConfigEditor.Elements;
-using ConfigtEditor.ConfigEditor;
+using ConfigEditor.Editor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,20 +9,14 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace ConfigtEditor.Elements
+namespace ConfigEditor.Elements
 {
     [Serializable]
     [XmlRoot("CONFIG")]
-    public class Config
+    public class SymlEditorConfig
     {
         [XmlIgnore]
-        public static Config Singleton = new Config();
-
-        [XmlElement("ServerConfig")]
-        public ServerConfig ServerConfig 
-        { 
-            get; set; 
-        }
+        public static SymlEditorConfig Singleton = new SymlEditorConfig();
 
         [XmlArray("Completors")]
         [XmlArrayItem("Completor")]
@@ -31,7 +25,7 @@ namespace ConfigtEditor.Elements
             get; set;
         }
 
-        public Config()
+        public SymlEditorConfig()
         {
             Completors = new List<Completor>();
         }
@@ -49,7 +43,7 @@ namespace ConfigtEditor.Elements
         public uint GetCompletorValueId()
         {
             uint nextId = 0;
-            foreach (var completor in Config.Singleton.Completors)
+            foreach (var completor in SymlEditorConfig.Singleton.Completors)
             {
                 if (completor.ListValues.Any())
                 {
@@ -66,17 +60,6 @@ namespace ConfigtEditor.Elements
         #region Default Value
         public void Default()
         {
-#if DEBUG
-            var serverConfig = new ServerConfig();
-            serverConfig.ExePath = "E:\\Games\\SteamLibrary\\steamapps\\common\\SCP Secret Laboratory Dedicated Server\\SCPSL.exe";
-            serverConfig.ServerIp.Add(new ServerValue("My sweet home", "127.0.0.1", 7777));
-            Singleton.ServerConfig = serverConfig;
-#else
-            var serverConfig = new ServerConfig();
-            Singleton.ServerConfig = serverConfig;
-#endif
-
-
             var completorBool = new Completor();
             completorBool.Id = GetCompletorId();
             completorBool.Name = "Bool";
@@ -401,7 +384,7 @@ namespace ConfigtEditor.Elements
             settings.OmitXmlDeclaration = true;
             var xmlWriter = XmlWriter.Create(stringwriter, settings);
 
-            var xmlSerializer = new XmlSerializer(typeof(Config));
+            var xmlSerializer = new XmlSerializer(typeof(SymlEditorConfig));
             xmlSerializer.Serialize(xmlWriter, this, nameSpace);
 
             return stringwriter.ToString();
@@ -423,14 +406,14 @@ namespace ConfigtEditor.Elements
                 if (!String.IsNullOrWhiteSpace(xml))
                 {
                     var xDoc = XDocument.Parse(xml);
-                    var xmlSerializer = new XmlSerializer(typeof(Config));
+                    var xmlSerializer = new XmlSerializer(typeof(SymlEditorConfig));
 
-                    Singleton = (Config)xmlSerializer.Deserialize(xDoc.CreateReader());
+                    Singleton = (SymlEditorConfig)xmlSerializer.Deserialize(xDoc.CreateReader());
                 }
             }
             else
             {
-                Singleton = new Config();
+                Singleton = new SymlEditorConfig();
                 Singleton.Default();
             }
         }

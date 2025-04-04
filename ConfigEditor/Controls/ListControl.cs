@@ -1,9 +1,9 @@
-﻿using ConfigtEditor.Interfaces;
+﻿using ConfigEditor.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public partial class ListControl<TElement> : ECSGridUserControl<TElement>
     {

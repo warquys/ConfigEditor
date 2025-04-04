@@ -1,6 +1,6 @@
-﻿namespace ConfigtEditor.CustomClass
+﻿namespace ConfigEditor.CustomClass
 {
-    partial class CustomSynapseClassEditUC
+    partial class CustomSymlClassEditUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             // BindingDataSource
             // 
-            this.BindingDataSource.DataSource = typeof(ConfigtEditor.CustomClass.CustomSynapseClass);
+            this.BindingDataSource.DataSource = typeof(CustomSymlClass);
             // 
             // _layoutControl
             // 

@@ -1,4 +1,4 @@
-﻿namespace ConfigtEditor.Controls
+﻿namespace ConfigEditor.Controls
 {
     partial class ListControl<TElement>
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._gridControl = new ConfigtEditor.Controls.ECSGridControl();
-            this._gridView = new ConfigtEditor.Controls.ECSGridView();
+            this._gridControl = new ECSGridControl();
+            this._gridView = new ECSGridView();
             ((System.ComponentModel.ISupportInitialize)(this._gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._gridView)).BeginInit();
             this.SuspendLayout();

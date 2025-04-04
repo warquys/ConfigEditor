@@ -4,14 +4,14 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using DevExpress.Utils;
-using ConfigtEditor.Commands;
-using ConfigtEditor.ConfigEditor;
-using ConfigtEditor.Controls;
-using ConfigtEditor.CustomClass;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Utils;
+using ConfigEditor.Commands;
+using ConfigEditor.Editor;
+using ConfigEditor.Controls;
+using ConfigEditor.CustomClass;
+using ConfigEditor.Elements;
+using ConfigEditor.Utils;
 
-namespace ConfigtEditor.Factory
+namespace ConfigEditor.Factory
 {
     public sealed class ECSListFactorySingleton : ECSListFactory
     {
@@ -61,31 +61,27 @@ namespace ConfigtEditor.Factory
 
         private void RegisterAll()
         {
-            Register<CustomSynapseClass>(() =>
+            Register<CustomSymlClass>(() =>
             {
-                var manager = new CustomSynapseClassManager();
-                var ctrl = new ListControl<CustomSynapseClass>(manager);
+                var manager = new CustomSymlClassManager();
+                var ctrl = new ListControl<CustomSymlClass>(manager);
 
                 InjectCommands(ctrl, true, true, true);
                 ctrl.Register("ACN_GENERATE_ALL_CLASS", new ActionCommand(() => manager.CreateAllClass()), "Create ...");
                 return ctrl;
             });
-            Register<SynapseConfigEditor>(() =>
+            Register<SymlConfigEditor>(() =>
             {
-                var ctrl = new SynapseConfigEditorUC();
+                var ctrl = new SymlConfigEditorUC();
                 return ctrl;
             });
-            Register<SynapsePermissionEditor>(() =>
-            {
-                var ctrl = new SynapseConfigEditorUC(true);
-                return ctrl;
-            });
-            Register<Config>(() => new ConfigUC());
+            Register<SymlEditorConfig>(() => new ConfigUC());
+            Extension.ExtensionHandler.CallEcsListRegisterHook(this);
         }
 
 
-        private void InjectCommands<T>(ListControl<T> control, bool addNewCmd = true, bool addEditCmd = true, bool addDeleteCmd = false)
-           where T : class, new()
+        public void InjectCommands<T>(ListControl<T> control, bool addNewCmd = true, bool addEditCmd = true, bool addDeleteCmd = false)
+            where T : class, new()
         {
             if (addNewCmd)
             {
@@ -103,6 +99,7 @@ namespace ConfigtEditor.Factory
             }
         }
 
-#endregion
+        #endregion
+
     }
 }

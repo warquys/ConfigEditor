@@ -1,10 +1,10 @@
-﻿using ConfigtEditor.Elements;
-using ConfigtEditor.Interfaces;
+﻿using ConfigEditor.Elements;
+using ConfigEditor.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConfigtEditor.Managers
+namespace ConfigEditor.Managers
 
 {
     public class FixedListManager<T> : IListManager<T>

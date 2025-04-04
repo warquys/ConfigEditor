@@ -1,10 +1,10 @@
-﻿using ConfigtEditor.Elements;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+﻿using ConfigEditor.Elements;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 using System;
 using System.Windows.Forms;
 
-namespace ConfigtEditor.Commands
+namespace ConfigEditor.Commands
 {
     public class ElementDeleteCommand<T> : BaseCommand<T>
     {

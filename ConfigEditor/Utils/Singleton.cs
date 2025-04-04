@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigtEditor.Utils
+namespace ConfigEditor.Utils
 {
     public static class Singleton<T>
     where T : class, new()

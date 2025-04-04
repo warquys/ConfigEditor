@@ -4,12 +4,12 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using ConfigtEditor.Commands;
-using ConfigtEditor.Elements;
-using ConfigtEditor.Interfaces;
-using ConfigtEditor.Utils;
+using ConfigEditor.Commands;
+using ConfigEditor.Elements;
+using ConfigEditor.Interfaces;
+using ConfigEditor.Utils;
 
-namespace ConfigtEditor.Controls
+namespace ConfigEditor.Controls
 {
     public partial class ECSEditUserControl : ECSBarUserControl
     {
